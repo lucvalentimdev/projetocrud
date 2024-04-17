@@ -2,13 +2,16 @@ program ProjectClientes;
 
 uses
   Vcl.Forms,
-  clientes in '..\..\Documents\Embarcadero\Studio\Projects\projetoclientes\clientes.pas' {Form1};
+  Menu in 'Views\Menu.pas' {F_Menu},
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  TStyleManager.TrySetStyle('Windows10');
+  Application.CreateForm(TF_Menu, F_Menu);
   Application.Run;
 end.
